@@ -1,0 +1,99 @@
+zack@monster:~/ai/Stan-s-ML-Stack$ ./scripts/enhanced_setup_environment.sh
+=== Enhanced ML Stack Environment Setup ===░░░░░░░░] 5% ⠸ Starting Enhanced ML Stack Environment Setup...
+
+>>> Checking System Dependencies░░░░░░░░░░░░░░░░░░░] 15% ⠴ Checking system dependencies...
+[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░] 50% ⠇ 
+>> Installing missing dependencies...
+Updating package lists with sudo...
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease                                                                                                                            
+[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░] 75% ⠋ 
+Hit:4 https://repo.radeon.com/amdgpu/6.4/ubuntu noble InRelease                                                                                                                              
+Hit:5 https://download.docker.com/linux/ubuntu noble InRelease                                                                                                                               
+Hit:6 https://repo.steampowered.com/steam stable InRelease                                                                                                                                   
+Hit:7 https://repo.radeon.com/rocm/apt/6.4 noble InRelease                                                                                                                                   
+Hit:8 http://repository.netdata.cloud/repos/stable/ubuntu noble/ InRelease                                                                                                                   
+Get:9 https://pkgs.tailscale.com/stable/ubuntu noble InRelease                                                                                     
+Hit:10 http://security.ubuntu.com/ubuntu noble-security InRelease                                                                                                                     
+Hit:11 https://dl.google.com/linux/chrome/deb stable InRelease                                                               
+Hit:12 http://repository.netdata.cloud/repos/repoconfig/ubuntu noble/ InRelease
+Hit:13 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu noble InRelease
+Hit:14 https://ppa.launchpadcontent.net/sosy-lab/benchmarking/ubuntu noble InRelease
+Fetched 6,578 B in 1s (8,142 B/s)
+Reading package lists... Done
+Installing missing packages with sudo...
+[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░] 95% ⠹ 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+libnuma-dev is already the newest version (2.0.18-1build1).
+0 upgraded, 0 newly installed, 0 to remove and 294 not upgraded.
+[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100% ⠼ 
+✗ Failed to install libnuma-dev
+>> Python version: 3.12.3
+[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100% ⠇ Complete!
+>> git version: 2.43.0
+>> cmake version: 3.28.3
+>>> Detecting AMD GPUs░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 30% ⠧ Detecting AMD GPUs...
+>> Searching for AMD GPUs...
+✓ AMD GPUs detected:
+  - 03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 32 [Radeon RX 7700 XT / 7800 XT] (rev c8)
+⚠ ROCm is not installed. Some features may not work correctly.
+>> Attempting to detect GPUs using other methods...
+>> GPU information from glxinfo:
+Error: unable to open display 
+
+✓ Detected 1 AMD GPU(s)
+>>> Detecting ROCm Installation░░░░░░░░░░░░░░░░░░░░] 50% ⠏ Detecting ROCm installation...
+⚠ ROCm is not installed or not in PATH
+>> Found ROCm in /opt/rocm-6.4.0
+>> Adding ROCm to PATH and LD_LIBRARY_PATH...
+⚠ Please install ROCm properly for full functionality
+>>> Configuring Environment Variables▓░░░░░░░░░░░░░] 75% ⠙ Configuring environment variables...
+>> Detecting discrete GPUs and filtering out integrated GPUs...
+LoadLib(1) failed: 1: cannot open shared object file: No such file or directory
+⚠ No discrete GPUs identified, using all available GPUs
+>> Setting GPU device variables...
+✓ GPU device variables set:
+  - HIP_VISIBLE_DEVICES: 0
+  - CUDA_VISIBLE_DEVICES: 0
+  - PYTORCH_ROCM_DEVICE: 0
+>> Setting ROCm-related variables...
+✓ ROCm-related variables set:
+  - ROCM_HOME: /opt/rocm-6.4.0
+  - CUDA_HOME: /opt/rocm-6.4.0
+>> Setting performance-related variables...
+✓ Performance-related variables set
+>>> Creating Environment File▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░] 95% ⠸ Creating environment file...
+>> Creating environment file...
+✓ Environment file created successfully
+>> Environment file: /home/zack/.mlstack_env
+>> The environment file has been added to your .bashrc file.
+>> To apply the changes, run: source /home/zack/.bashrc
+>>> Creating Directory Structure▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100% ⠴ Creating directory structure...
+>> Creating directory structure...
+✓ Directory structure created successfully
+=== Enhanced ML Stack Environment Setup Complete === 100% ⠧ Finalizing setup...
+
+>> To apply the changes, run: source /home/zack/.bashrc
+zack@monster:~/ai/Stan-s-ML-Stack$ source /home/zack/.bashrc
+zack@monster:~/ai/Stan-s-ML-Stack$ ./scripts/install_ml_stack.sh
+                                ML Stack Installation Script
+
+
+╔═════════════════════════════════════════════════════════╗
+║                                                         ║
+║               === ML Stack Installation Script ===               ║
+║                                                         ║
+╚═════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────┐
+│ Checking prerequisites
+└─────────────────────────────────────────────────────────┘
+System Requirements Check
+───────────────────────────────────────────────────────────
+✗ ROCm is not installed. Please install ROCm first.
+✗ Prerequisites check failed. Exiting.
+Forced exit
+Killed
